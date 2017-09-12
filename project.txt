@@ -1,0 +1,38 @@
+ Project run with ->  grunt serve
+ Database name  -> chat
+
+1. Table user
+
+ CREATE TABLE `user` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(200) COLLATE utf8_bin DEFAULT NULL,
+  `password` varchar(200) COLLATE utf8_bin DEFAULT NULL,
+  `p_photo` varchar(200) COLLATE utf8_bin DEFAULT NULL,
+  `timestamp` varchar(45) COLLATE utf8_bin DEFAULT NULL,
+  `online` varchar(45) COLLATE utf8_bin DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_bin
+
+2. Table conversation
+
+CREATE TABLE `conversation` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `from_id` int(11) DEFAULT NULL,
+  `to_id` int(11) DEFAULT NULL,
+  `timestamp` varchar(50) COLLATE utf8_bin DEFAULT NULL,
+  `con_id` int(10) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_bin
+
+3. Table conversation_reply
+
+CREATE TABLE `conversation_reply` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `reply` varchar(500) COLLATE utf8_bin DEFAULT NULL,
+  `from_id` int(11) DEFAULT NULL,
+  `to_id` int(11) DEFAULT NULL,
+  `timestamp` varchar(50) COLLATE utf8_bin DEFAULT NULL,
+  `con_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_bin
+
